@@ -4,7 +4,8 @@ from PIL import Image
 import io
 
 # Replace this with your deployed API URL on Render later:
-API_URL = "http://localhost:8000"
+API_URL = "https://happy-sad-classifier-3.onrender.com"
+
 
 st.title("😊 Happy vs Sad Face Classifier 😢")
 st.write("Upload an image and let the model predict the emotion.")
