@@ -7,9 +7,6 @@ __pycache__/
 checkpoint
 *.ckpt
 
-# Models (optional: but we keep ours)
-*.h5
-*.pkl
 
 # Virtual environment
 venv/
