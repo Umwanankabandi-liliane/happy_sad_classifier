@@ -1,12 +1,15 @@
 from locust import HttpUser, task, between
+import os
 
 class MLLoadTest(HttpUser):
     wait_time = between(1, 2)
 
     @task
     def test_prediction(self):
-        # Read test image from SAME folder as locustfile.py
-        with open("test_image.jpg", "rb") as f:
+        # Full correct path for Windows setup
+        test_path = os.path.join("load_test", "test_image.jpg")
+
+        with open(test_path, "rb") as f:
             img = f.read()
 
         self.client.post(
