@@ -1,14 +1,16 @@
 from locust import HttpUser, task, between
 
-class EmotionClassifierUser(HttpUser):
+class MLLoadTest(HttpUser):
     wait_time = between(1, 2)
 
     @task
     def test_prediction(self):
-        """
-        Sends a test request to the /predict endpoint.
-        You must place a sample image named 'test.jpg' inside this folder.
-        """
-        with open("test.jpg", "rb") as f:
-            files = {"file": ("test.jpg", f, "image/jpeg")}
-            self.client.post("/predict", files=files)
+        # Read test image
+        with open("test_image.jpg", "rb") as f:
+            img = f.read()
+
+        # Send image to cloud API
+        self.client.post(
+            "/predict",
+            files={"file": ("test_image.jpg", img, "image/jpeg")}
+        )
