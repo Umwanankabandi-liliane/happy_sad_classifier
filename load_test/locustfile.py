@@ -5,11 +5,10 @@ class MLLoadTest(HttpUser):
 
     @task
     def test_prediction(self):
-        # Read test image (correct path)
-        with open("load_test/test_image.jpg", "rb") as f:
+        # Read test image from SAME folder as locustfile.py
+        with open("test_image.jpg", "rb") as f:
             img = f.read()
 
-        # Send image to cloud API
         self.client.post(
             "/predict",
             files={"file": ("test_image.jpg", img, "image/jpeg")}
