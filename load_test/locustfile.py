@@ -5,8 +5,8 @@ class MLLoadTest(HttpUser):
 
     @task
     def test_prediction(self):
-        # Read test image
-        with open("test_image.jpg", "rb") as f:
+        # Read test image (correct path)
+        with open("load_test/test_image.jpg", "rb") as f:
             img = f.read()
 
         # Send image to cloud API
