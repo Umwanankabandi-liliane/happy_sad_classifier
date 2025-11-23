@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+tensorflow
+pillow
+numpy
+joblib
+opencv-python
+scikit-learn
+streamlit
+python-multipart
+locust

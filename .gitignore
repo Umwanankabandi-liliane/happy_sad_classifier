@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# TensorFlow checkpoints
+checkpoint
+*.ckpt
+
+# Models (optional: but we keep ours)
+*.h5
+*.pkl
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Data folders (optional but recommended)
+data/
+
+# Upload folder
+uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+.streamlit/
+
+# Locust logs
+*.stats.csv
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Hidden OS files
+*.swp
+*.swo
